@@ -20,7 +20,6 @@ public class ApplicationController {
             return ResponseEntity.ok(service.getLastData("Minsk"));
         } catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e);
-
         }
     }
 

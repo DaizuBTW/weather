@@ -25,8 +25,8 @@ public class WeatherDataModel {
         model.setCondition(entity.getCondition());
         model.setLocation(entity.getLocation());
 
-        SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT_PATTERN);
         if (entity.getDate() != null) {
+            SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT_PATTERN);
             model.setDate(formatter.format(entity.getDate()));
         }
         return model;
