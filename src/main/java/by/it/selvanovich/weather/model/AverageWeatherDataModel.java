@@ -1,16 +1,14 @@
 package by.it.selvanovich.weather.model;
 
-import by.it.selvanovich.weather.constants.Constants;
 import by.it.selvanovich.weather.entity.WeatherData;
 
-import java.text.SimpleDateFormat;
 import java.util.Objects;
 
 public class AverageWeatherDataModel {
 
-    private float averageTemperature;
-    private float averageWind;
-    private float averagePressure;
+    private float averageTemperatureC;
+    private float averageWindMH;
+    private float averagePressureMB;
     private int averageHumidity;
     private String averageCondition;
     private String location;
@@ -18,9 +16,9 @@ public class AverageWeatherDataModel {
 
     public static AverageWeatherDataModel toModel(WeatherData entity, String from, String to) {
         AverageWeatherDataModel model = new AverageWeatherDataModel();
-        model.setAverageTemperature(entity.getTemperature());
-        model.setAverageWind(entity.getWind());
-        model.setAveragePressure(entity.getPressure());
+        model.setAverageTemperatureC(entity.getTemperature());
+        model.setAverageWindMH(entity.getWind());
+        model.setAveragePressureMB(entity.getPressure());
         model.setAverageHumidity(entity.getHumidity());
         model.setAverageCondition(entity.getCondition());
         model.setLocation(entity.getLocation());
@@ -32,28 +30,28 @@ public class AverageWeatherDataModel {
     public AverageWeatherDataModel() {
     }
 
-    public float getAverageTemperature() {
-        return averageTemperature;
+    public float getAverageTemperatureC() {
+        return averageTemperatureC;
     }
 
-    public void setAverageTemperature(float averageTemperature) {
-        this.averageTemperature = averageTemperature;
+    public void setAverageTemperatureC(float averageTemperatureC) {
+        this.averageTemperatureC = averageTemperatureC;
     }
 
-    public float getAverageWind() {
-        return averageWind;
+    public float getAverageWindMH() {
+        return averageWindMH;
     }
 
-    public void setAverageWind(float averageWind) {
-        this.averageWind = averageWind;
+    public void setAverageWindMH(float averageWindMH) {
+        this.averageWindMH = averageWindMH;
     }
 
-    public float getAveragePressure() {
-        return averagePressure;
+    public float getAveragePressureMB() {
+        return averagePressureMB;
     }
 
-    public void setAveragePressure(float averagePressure) {
-        this.averagePressure = averagePressure;
+    public void setAveragePressureMB(float averagePressureMB) {
+        this.averagePressureMB = averagePressureMB;
     }
 
     public int getAverageHumidity() {
@@ -93,9 +91,9 @@ public class AverageWeatherDataModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AverageWeatherDataModel weatherData = (AverageWeatherDataModel) o;
-        return Objects.equals(averageTemperature, weatherData.averageTemperature) &&
-                Objects.equals(averageWind, weatherData.averageWind) &&
-                Objects.equals(averagePressure, weatherData.averagePressure) &&
+        return Objects.equals(averageTemperatureC, weatherData.averageTemperatureC) &&
+                Objects.equals(averageWindMH, weatherData.averageWindMH) &&
+                Objects.equals(averagePressureMB, weatherData.averagePressureMB) &&
                 Objects.equals(averageHumidity, weatherData.averageHumidity) &&
                 Objects.equals(averageCondition, weatherData.averageCondition) &&
                 Objects.equals(location, weatherData.location) &&
@@ -104,6 +102,6 @@ public class AverageWeatherDataModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(averageTemperature, averageWind, averagePressure, averageHumidity, averageCondition, location, date);
+        return Objects.hash(averageTemperatureC, averageWindMH, averagePressureMB, averageHumidity, averageCondition, location, date);
     }
 }

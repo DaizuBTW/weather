@@ -8,9 +8,9 @@ import java.util.Objects;
 
 public class WeatherDataModel {
 
-    private float temperature;
-    private float wind;
-    private float pressure;
+    private float temperatureC;
+    private float windMH;
+    private float pressureMB;
     private int humidity;
     private String condition;
     private String location;
@@ -18,9 +18,9 @@ public class WeatherDataModel {
 
     public static WeatherDataModel toModel(WeatherData entity) {
         WeatherDataModel model = new WeatherDataModel();
-        model.setTemperature(entity.getTemperature());
-        model.setWind(entity.getWind());
-        model.setPressure(entity.getPressure());
+        model.setTemperatureC(entity.getTemperature());
+        model.setWindMH(entity.getWind());
+        model.setPressureMB(entity.getPressure());
         model.setHumidity(entity.getHumidity());
         model.setCondition(entity.getCondition());
         model.setLocation(entity.getLocation());
@@ -35,28 +35,28 @@ public class WeatherDataModel {
     public WeatherDataModel() {
     }
 
-    public float getTemperature() {
-        return temperature;
+    public float getTemperatureC() {
+        return temperatureC;
     }
 
-    public void setTemperature(float temperature) {
-        this.temperature = temperature;
+    public void setTemperatureC(float temperatureC) {
+        this.temperatureC = temperatureC;
     }
 
-    public float getWind() {
-        return wind;
+    public float getWindMH() {
+        return windMH;
     }
 
-    public void setWind(float wind) {
-        this.wind = wind;
+    public void setWindMH(float windMH) {
+        this.windMH = windMH;
     }
 
-    public float getPressure() {
-        return pressure;
+    public float getPressureMB() {
+        return pressureMB;
     }
 
-    public void setPressure(float pressure) {
-        this.pressure = pressure;
+    public void setPressureMB(float pressureMB) {
+        this.pressureMB = pressureMB;
     }
 
     public int getHumidity() {
@@ -96,9 +96,9 @@ public class WeatherDataModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WeatherDataModel weatherData = (WeatherDataModel) o;
-        return Objects.equals(temperature, weatherData.temperature) &&
-                Objects.equals(wind, weatherData.wind) &&
-                Objects.equals(pressure, weatherData.pressure) &&
+        return Objects.equals(temperatureC, weatherData.temperatureC) &&
+                Objects.equals(windMH, weatherData.windMH) &&
+                Objects.equals(pressureMB, weatherData.pressureMB) &&
                 Objects.equals(humidity, weatherData.humidity) &&
                 Objects.equals(condition, weatherData.condition) &&
                 Objects.equals(location, weatherData.location) &&
@@ -107,7 +107,7 @@ public class WeatherDataModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(temperature, wind, pressure, humidity, condition, location, date);
+        return Objects.hash(temperatureC, windMH, pressureMB, humidity, condition, location, date);
     }
 
 }

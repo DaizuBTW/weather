@@ -25,10 +25,10 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Autowired
     private DataRepository dataRepository;
-    private OkHttpClient client = new OkHttpClient();
+    private final OkHttpClient client = new OkHttpClient();
 
     @Override
-    @Scheduled(fixedRate = Constants.SCHEDULE_TIME)
+    @Scheduled(cron = "${com.scheduled.cron}")
     public void getWeatherJson() throws ServiceException {
         Request request = new Request.Builder()
                 .url(Constants.RAPID_API_URL)
@@ -69,8 +69,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 
             return new WeatherData(Float.parseFloat(temperature), Float.parseFloat(wind),
                     Float.parseFloat(pressure), Integer.parseInt(humidity),
-                    condition, location,
-                    format.parse(date));
+                    condition, location, format.parse(date));
         } catch (Exception e) {
             LOG.error("invalid data was received", e);
             throw new ServiceException("invalid data was received");

@@ -1,8 +1,6 @@
 package by.it.selvanovich.weather.constants;
 
 public class Constants {
-    public static final int SCHEDULE_TIME = 1800000; // Таймер установлен на 30 минут
-
     public static final String DATE_FORMAT_PATTERN = "yyyy-MM-dd HH:mm";
     public static final String AVERAGE_DATE_FORMAT_PATTERN = "yyyy-MM-dd";
 

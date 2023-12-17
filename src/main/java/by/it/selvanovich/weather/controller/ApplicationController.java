@@ -1,9 +1,7 @@
 package by.it.selvanovich.weather.controller;
 
 
-import by.it.selvanovich.weather.entity.WeatherData;
 import by.it.selvanovich.weather.exeption.ServiceException;
-import by.it.selvanovich.weather.repository.DataRepository;
 import by.it.selvanovich.weather.service.impl.WeatherDataServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
