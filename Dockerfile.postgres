@@ -1,0 +1,3 @@
+FROM postgres:16
+COPY src/main/resources/db/schema.sql /docker-entrypoint-initdb.d/schema.sql
+EXPOSE 5432
